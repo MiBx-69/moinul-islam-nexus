@@ -44,9 +44,9 @@ const Footer = () => {
             <h4 className="font-orbitron font-bold mb-4 text-glow-accent">Links</h4>
             <ul className="space-y-2 text-sm">
               {[
-                { label: 'Privacy Policy', href: '#' },
-                { label: 'Terms of Service', href: '#' },
-                { label: 'Sitemap', href: '#' },
+                { label: 'Privacy Policy', href: '/privacy-policy' },
+                { label: 'Terms of Service', href: '/terms-of-service' },
+                { label: 'Sitemap', href: '/sitemap.xml' },
                 { label: 'Contact', href: '#contact' }
               ].map((link, index) => (
                 <li key={index}>

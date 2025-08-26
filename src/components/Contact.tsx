@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Send, Terminal } from "lucide-react";
+import { Mail, Send, Terminal, MapPin, Clock, Github, Linkedin, MessageCircle, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -45,51 +45,108 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="glass-card p-6 rounded-xl">
-              <h3 className="font-orbitron text-2xl font-bold mb-6 text-glow-secondary">
-                Get In Touch
-              </h3>
-              
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Ready to scale your business with cutting-edge SEO strategies and futuristic digital solutions? 
-                Let's discuss how I can help you dominate your market.
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <span className="text-muted-foreground">moinul@mibrand.com</span>
+          <div className="space-y-6">
+            {/* Email */}
+            <div className="glass-card p-6 rounded-xl hover:scale-105 transition-transform">
+              <div className="flex items-center space-x-4">
+                <div className="p-3 rounded-lg bg-primary/20">
+                  <Mail className="w-6 h-6 text-primary" />
                 </div>
-                
-                <div className="flex items-center space-x-3">
-                  <Terminal className="w-5 h-5 text-secondary" />
-                  <span className="text-muted-foreground">Available for consultation</span>
+                <div>
+                  <h4 className="font-orbitron font-bold text-glow-secondary">Email</h4>
+                  <a href="mailto:Moinul@mibrand.agency" className="text-muted-foreground hover:text-primary transition-colors">
+                    Moinul@mibrand.agency
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp */}
+            <div className="glass-card p-6 rounded-xl hover:scale-105 transition-transform">
+              <div className="flex items-center space-x-4">
+                <div className="p-3 rounded-lg bg-secondary/20">
+                  <MessageCircle className="w-6 h-6 text-secondary" />
+                </div>
+                <div>
+                  <h4 className="font-orbitron font-bold text-glow-accent">WhatsApp</h4>
+                  <a 
+                    href="https://wa.me/+8801605956421?text=Hello%20Moinul!%20I%20came%20from%20your%20portfolio%20website%20and%20would%20like%20to%20discuss%20a%20project%20with%20you."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-secondary transition-colors"
+                  >
+                    +880 1605-956421
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="glass-card p-6 rounded-xl hover:scale-105 transition-transform">
+              <div className="flex items-center space-x-4">
+                <div className="p-3 rounded-lg bg-accent/20">
+                  <MapPin className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="font-orbitron font-bold text-glow">Location</h4>
+                  <p className="text-muted-foreground">Bangladesh (Working Globally)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Availability */}
+            <div className="glass-card p-6 rounded-xl hover:scale-105 transition-transform">
+              <div className="flex items-center space-x-4">
+                <div className="p-3 rounded-lg bg-primary/20">
+                  <Clock className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-orbitron font-bold text-glow-secondary">Availability</h4>
+                  <p className="text-muted-foreground">24/7 Support Available</p>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
             <div className="glass-card p-6 rounded-xl">
-              <h4 className="font-orbitron text-lg font-bold mb-4 text-glow-accent">
-                Connect With Me
-              </h4>
-              <div className="flex space-x-4">
-                {[
-                  { name: 'LinkedIn', url: '#' },
-                  { name: 'GitHub', url: '#' },
-                  { name: 'Twitter', url: '#' }
-                ].map((social, index) => (
-                  <Button
-                    key={index}
-                    variant="outline"
-                    size="sm"
-                    className="neon-border-secondary hover:bg-secondary/10"
-                    onClick={() => window.open(social.url, '_blank')}
-                  >
-                    {social.name}
-                  </Button>
-                ))}
+              <h4 className="font-orbitron font-bold text-glow-secondary mb-4">Connect with Me</h4>
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href="https://github.com/mibx-69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 p-3 rounded-lg bg-primary/20 hover:bg-primary/30 transition-colors group"
+                >
+                  <Github className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium">GitHub</span>
+                </a>
+                <a
+                  href="https://facebook.com/m.moinul69"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 p-3 rounded-lg bg-secondary/20 hover:bg-secondary/30 transition-colors group"
+                >
+                  <Facebook className="w-5 h-5 text-secondary group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium">Facebook</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/moinulislam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 p-3 rounded-lg bg-accent/20 hover:bg-accent/30 transition-colors group"
+                >
+                  <Linkedin className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium">LinkedIn</span>
+                </a>
+                <a
+                  href="https://wa.me/+8801605956421?text=Hello%20Moinul!%20I%20came%20from%20your%20portfolio%20website."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 p-3 rounded-lg bg-primary/20 hover:bg-primary/30 transition-colors group"
+                >
+                  <MessageCircle className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium">WhatsApp</span>
+                </a>
               </div>
             </div>
           </div>

@@ -29,14 +29,15 @@ const About = () => {
             </h3>
             
             <p className="text-lg leading-relaxed mb-6 text-muted-foreground">
-              I'm <strong className="text-primary">M. Moinul Islam</strong>, an SEO Specialist, Developer, and Founder of 
-              <strong className="text-secondary"> MiBrand Agency</strong>. With 3+ years of experience in digital marketing, 
-              automation, and Linux-based development, I help businesses rank higher, grow faster, and secure their systems.
+              Hello! I'm <strong className="text-primary">Moinul Islam</strong>, a Digital Marketing Specialist, SEO Expert, Web Developer, and Cybersecurity Professional based in Bangladesh. Over the past three years, I have built a strong career dedicated to helping businesses grow online while mastering SEO, digital marketing, web development, automation, and cybersecurity.
             </p>
             
             <p className="text-lg leading-relaxed mb-6 text-muted-foreground">
-              My expertise spans across technical SEO, ethical hacking, and building futuristic automation solutions. 
-              I believe in combining cutting-edge technology with proven marketing strategies to deliver exceptional results.
+              I am the Founder of <strong className="text-secondary">MiBrand Agency</strong>, a results-driven digital marketing agency delivering SEO, content strategy, social media marketing, and business growth solutions to clients both locally and internationally. I am actively involved in technology-driven projects, automation tools, and cybersecurity solutions, applying my skills across a wide range of industries.
+            </p>
+
+            <p className="text-lg leading-relaxed mb-6 text-muted-foreground">
+              I am open to job opportunities, collaborations, and freelance projects worldwide, where I can leverage my expertise to help companies grow, optimize their digital presence, and strengthen their technology systems.
             </p>
 
             <div className="grid grid-cols-2 gap-4 text-sm">
@@ -46,15 +47,23 @@ const About = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
-                <span>MiBrand Founder</span>
+                <span>MiBrand Agency Founder</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                <span>SEO Specialist</span>
+                <span>SEO & Digital Marketing</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <span>Security Expert</span>
+                <span>Cybersecurity Expert</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+                <span>Web Development</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                <span>Automation Specialist</span>
               </div>
             </div>
           </div>
