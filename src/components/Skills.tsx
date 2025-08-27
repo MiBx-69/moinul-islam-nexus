@@ -1,41 +1,95 @@
-import { Search, Code, Shield, TrendingUp, Bot, Database } from "lucide-react";
+import { Search, Code, Shield, TrendingUp, Bot, Database, Phone, Users, BarChart3, Globe } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "SEO & Marketing Skills",
+    title: "SEO & Marketing",
     icon: Search,
     skills: [
       "Technical SEO",
-      "On-page SEO", 
-      "Backlinking",
-      "Google Ads",
-      "Social Marketing"
+      "On-page & Off-page SEO", 
+      "Keyword Research",
+      "Content Strategy",
+      "EEAT Implementation",
+      "Social Media Marketing",
+      "Email Marketing Campaigns"
     ],
-    color: "primary"
+    color: "primary",
+    description: "Advanced SEO strategies and digital marketing expertise"
   },
   {
-    title: "Development Skills",
+    title: "Web & App Development",
     icon: Code,
     skills: [
-      "Python",
-      "Telethon Bots",
-      "React",
-      "Tailwind CSS",
-      "MySQL"
+      "React & Tailwind CSS",
+      "WordPress & Shopify",
+      "High-Performance Websites",
+      "Mobile-Friendly Applications",
+      "Custom Solutions",
+      "API Integration",
+      "Database Management"
     ],
-    color: "secondary"
+    color: "secondary",
+    description: "Full-stack development with modern technologies"
   },
   {
-    title: "Security & Tech Skills",
+    title: "Automation & Bots",
+    icon: Bot,
+    skills: [
+      "Telegram Bot Development",
+      "Workflow Automation",
+      "Session Handling",
+      "Admin Dashboards",
+      "Python Automation",
+      "Process Optimization",
+      "Scalable Systems"
+    ],
+    color: "accent",
+    description: "Intelligent automation and bot development"
+  },
+  {
+    title: "Cybersecurity & Ethical Hacking",
     icon: Shield,
     skills: [
+      "Penetration Testing",
+      "Vulnerability Assessment",
+      "WiFi Security Evaluation",
+      "System Security Audits",
       "Ethical Hacking",
-      "Pentesting",
-      "Linux Systems",
-      "Automation",
-      "System Security"
+      "Security Automation",
+      "Linux Systems"
     ],
-    color: "accent"
+    color: "primary",
+    description: "Advanced cybersecurity and ethical hacking services"
+  },
+  {
+    title: "Business & Leadership",
+    icon: Users,
+    skills: [
+      "Project Management",
+      "Client Relations",
+      "Team Leadership",
+      "Strategic Planning",
+      "Bilingual Communication",
+      "Quality Assurance",
+      "Results Delivery"
+    ],
+    color: "secondary",
+    description: "Business leadership and project management"
+  },
+  {
+    title: "Marketing & Communication",
+    icon: Phone,
+    skills: [
+      "Telecall & Telemarketing",
+      "Social Media Advertising",
+      "Lead Generation",
+      "Conversion Optimization",
+      "Brand Strategy",
+      "Customer Engagement",
+      "Campaign Management"
+    ],
+    color: "accent",
+    description: "Advanced marketing and communication strategies"
   }
 ];
 
@@ -47,7 +101,7 @@ const Skills = () => {
           Technical Expertise
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             const glowClass = category.color === 'primary' ? 'neon-border' : 
@@ -60,22 +114,26 @@ const Skills = () => {
                 className={`glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300 ${glowClass} group`}
               >
                 <div className="text-center mb-6">
-                  <div className={`inline-flex p-4 rounded-full mb-4 ${
+                  <div className={`inline-flex p-4 rounded-full mb-4 relative ${
                     category.color === 'primary' ? 'bg-primary/20' :
                     category.color === 'secondary' ? 'bg-secondary/20' :
                     'bg-accent/20'
                   }`}>
+                    <div className="absolute inset-0 rounded-full animate-ping opacity-20 bg-current"></div>
                     <IconComponent 
-                      className={`w-8 h-8 ${
+                      className={`w-8 h-8 relative z-10 ${
                         category.color === 'primary' ? 'text-primary' :
                         category.color === 'secondary' ? 'text-secondary' :
                         'text-accent'
                       } group-hover:animate-pulse`}
                     />
                   </div>
-                  <h3 className="font-orbitron text-xl font-bold mb-4">
+                  <h3 className="font-orbitron text-xl font-bold mb-2">
                     {category.title}
                   </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {category.description}
+                  </p>
                 </div>
 
                 <ul className="space-y-3">

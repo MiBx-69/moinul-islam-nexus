@@ -45,9 +45,9 @@ const Hero = () => {
           }}></div>
         </div>
 
-        {/* Particle effect overlay */}
+        {/* Enhanced particle effect overlay */}
         <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(30)].map((_, i) => (
             <div
               key={i}
               className="absolute w-1 h-1 bg-primary rounded-full animate-pulse"
@@ -59,6 +59,14 @@ const Hero = () => {
               }}
             />
           ))}
+        </div>
+
+        {/* Futuristic illustrations */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 border-2 border-primary rounded-full animate-spin-slow"></div>
+          <div className="absolute top-20 right-20 w-24 h-24 border border-secondary rounded-lg rotate-45 animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-16 h-16 bg-accent/20 rounded-full animate-bounce"></div>
+          <div className="absolute bottom-10 right-10 w-20 h-20 border-t-2 border-l-2 border-primary rounded-tl-full animate-ping"></div>
         </div>
       </div>
 
@@ -138,11 +146,25 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Enhanced scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center backdrop-blur-sm bg-background/10">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+      {/* Enhanced scroll indicator with smooth scrolling */}
+      <div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group"
+        onClick={() => {
+          const aboutSection = document.getElementById('about');
+          if (aboutSection) {
+            aboutSection.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }}
+      >
+        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center backdrop-blur-sm bg-background/10 group-hover:border-primary-glow transition-colors">
+          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse group-hover:bg-primary-glow"></div>
         </div>
+        <p className="text-xs text-muted-foreground mt-2 text-center opacity-0 group-hover:opacity-100 transition-opacity">
+          Scroll to explore
+        </p>
       </div>
     </section>
   );

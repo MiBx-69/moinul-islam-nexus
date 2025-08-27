@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Send, Terminal, MapPin, Clock, Github, Linkedin, MessageCircle, Facebook } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,15 +26,36 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // EmailJS configuration - Replace with your actual service ID, template ID, and public key
+      await emailjs.send(
+        'service_mibrand', // Replace with your EmailJS service ID
+        'template_portfolio', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Moinul Islam',
+          to_email: 'Moinul@mibrand.agency'
+        },
+        'public_key_mibrand' // Replace with your EmailJS public key
+      );
+
       toast({
         title: "Message Transmitted Successfully",
-        description: "Your message has been sent. I'll get back to you soon!",
+        description: "Your message has been sent via EmailJS. I'll get back to you soon!",
       });
       setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Transmission Failed",
+        description: "Failed to send message. Please try again or contact directly at Moinul@mibrand.agency",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
